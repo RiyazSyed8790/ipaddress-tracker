@@ -5,6 +5,7 @@ import { TileLayer, Marker, Popup } from 'react-leaflet';
 import { MapContainer } from 'react-leaflet';
 import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
 import L from "leaflet";
+import 'leaflet/dist/leaflet.css';
 function App() {
   let text=">";
   const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
