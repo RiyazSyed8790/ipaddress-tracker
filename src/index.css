@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;1,100&family=Bellefair&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
-@import url("/node_modules/leaflet/dist/leaflet.css");
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 
 @layer utilities{
   .bord{
