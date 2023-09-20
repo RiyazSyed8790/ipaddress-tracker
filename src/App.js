@@ -40,7 +40,7 @@ function App() {
       }
     })
     .then(function (response) {
-      console.log(response);
+      //console.log(response);
       setDat(response.data);
       setCord([response.data.location.lat,response.data.location.lng]);
     })
