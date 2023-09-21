@@ -33,7 +33,7 @@ function App() {
   }
   function LocationMarker() {
     const map = useMapEvents({
-      click() {
+      mouseover() {
         map.flyTo(cord, 15)
       },
     })
