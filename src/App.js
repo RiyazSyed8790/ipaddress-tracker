@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import './App.css';
 import axios from 'axios';
 import { TileLayer, Marker, Popup } from 'react-leaflet';
-import { MapContainer } from 'react-leaflet';
+import { MapContainer,useMapEvents } from 'react-leaflet';
 
 function App() {
   let text=">";
@@ -30,6 +30,19 @@ function App() {
     if(e.key==="Enter"){
       getIp();
     }
+  }
+  function LocationMarker() {
+    const map = useMapEvents({
+      click() {
+        map.flyTo(cord, 15)
+      },
+    })
+  
+    return cord === null ? null : (
+      <Marker position={cord}>
+        <Popup>You are here</Popup>
+      </Marker>
+    )
   }
   function getIp(){
     ipv4Regex.test(query)?(
@@ -87,11 +100,7 @@ function App() {
       attribution='<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>'
       url='https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=5wFM7v9vkH24H6JHfzVz'
     />
-    <Marker  position={cord}>
-      <Popup>
-        You are here!
-      </Popup>
-    </Marker>
+    <LocationMarker />
   </MapContainer>
       </section>
     </main>
